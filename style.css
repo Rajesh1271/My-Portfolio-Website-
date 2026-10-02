@@ -645,6 +645,237 @@ canvas {
 }
 
 /* ========================================= */
+/* PREMIUM HOVER EFFECTS & INTERACTIONS */
+/* ========================================= */
+
+/* Button Hover Effects */
+.btn-primary, .btn-secondary, .freelance-btn {
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover, .freelance-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(214, 51, 51, 0.3);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+    background: #fff;
+    color: #000;
+}
+
+/* Project Cards Hover */
+.project-image {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-card .top {
+    transition: padding-left 0.3s ease, color 0.3s ease;
+}
+
+.project-card:hover .top h4 {
+    color: var(--primary);
+}
+
+.project-arrow {
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.project-card:hover .project-arrow {
+    transform: translateX(5px) scale(1.1);
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+/* Social Links Hover */
+.social-links a {
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+.social-links a:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: var(--primary);
+}
+
+/* Nav Links Underline Animation */
+.nav-links a {
+    position: relative;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Scroll Reveal Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================= */
+/* LAPTOP SCREEN ANIMATION */
+/* ========================================= */
+.laptop-placeholder .screen {
+    position: relative;
+    overflow: hidden;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif !important;
+    background: #0a0a0a;
+}
+
+.laptop-placeholder .screen::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 100%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.lp-main-text {
+    position: relative;
+    z-index: 2;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    line-height: 0.9;
+    color: #fff;
+    text-align: left;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.lp-main-text span {
+    display: inline-block;
+}
+
+.lp-code-elements {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ce {
+    position: absolute;
+    font-family: monospace;
+    font-size: 6px;
+    color: #555;
+    opacity: 0;
+    animation: fadePulse 6s infinite ease-in-out;
+}
+
+.ce-1 { top: 10%; left: 10%; animation-delay: 0s; }
+.ce-2 { top: 70%; left: 15%; animation-delay: 2s; }
+.ce-3 { top: 20%; right: 10%; font-family: 'Inter', sans-serif; font-weight: 600; color: #888; animation-delay: 1s; }
+.ce-4 { top: 80%; right: 15%; font-family: 'Inter', sans-serif; font-weight: 600; color: #888; animation-delay: 3s; }
+.ce-label { bottom: 10%; left: 10%; font-family: 'Bebas Neue', sans-serif; font-size: 8px; color: var(--primary); letter-spacing: 1px; animation-delay: 1.5s; }
+
+.lp-preview-panel {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%) translateX(20px);
+    width: 60px;
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 6px;
+    z-index: 3;
+    opacity: 0;
+    backdrop-filter: blur(2px);
+    animation: slideInPanel 8s infinite ease-in-out;
+}
+
+.lpp-header {
+    font-size: 5px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 2px;
+}
+
+.lpp-body span {
+    display: block;
+    font-size: 4px;
+    color: #999;
+    margin-bottom: 2px;
+}
+.lpp-body span:first-child {
+    color: var(--primary);
+}
+
+.lp-cursor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    color: #fff;
+    font-size: 10px;
+    pointer-events: none;
+    animation: cursorAnim 8s infinite ease-in-out;
+}
+
+@keyframes fadePulse {
+    0%, 100% { opacity: 0; transform: translateY(5px); }
+    30%, 70% { opacity: 0.8; transform: translateY(0); }
+}
+
+@keyframes slideInPanel {
+    0%, 100% { opacity: 0; transform: translateY(-50%) translateX(20px); }
+    15%, 45% { opacity: 1; transform: translateY(-50%) translateX(0); }
+    50%, 95% { opacity: 0; transform: translateY(-50%) translateX(20px); }
+}
+
+@keyframes cursorAnim {
+    0% { transform: translate(0, 0); }
+    15% { transform: translate(30px, -20px); }
+    20% { transform: translate(30px, -20px) scale(0.8); }
+    25% { transform: translate(30px, -20px); }
+    40% { transform: translate(-30px, 10px); }
+    45% { transform: translate(-30px, 10px) scale(0.8); }
+    50% { transform: translate(-30px, 10px); }
+    65% { transform: translate(10px, 20px); }
+    70% { transform: translate(10px, 20px) scale(0.8); }
+    75% { transform: translate(10px, 20px); }
+    100% { transform: translate(0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lp-cursor, .ce, .lp-preview-panel {
+        animation: none;
+        display: none;
+    }
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ========================================= */
 /* RESPONSIVE MEDIA QUERIES */
 /* ========================================= */
 

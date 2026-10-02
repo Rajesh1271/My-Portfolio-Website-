@@ -75,3 +75,30 @@ freelanceBtns.forEach(btn => {
         }
     });
 });
+
+// Scroll Reveal Animations
+const revealElements = document.querySelectorAll('.reveal');
+if (revealElements.length > 0) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (!prefersReducedMotion) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        });
+        
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+    } else {
+        revealElements.forEach(el => el.classList.add('active'));
+    }
+}
