@@ -43,3 +43,35 @@ window.addEventListener('scroll', () => {
         currentFrameIndex = frameIndex;
     }
 });
+
+// Freelance Button Functionality
+const FREELANCE_EMAIL = "rm1279269@gmail.com";
+
+const freelanceBtns = document.querySelectorAll('#freelance-btn, .available-btn');
+freelanceBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const subject = "Freelance Project Inquiry";
+        const body = `Hello,\n\nI'm interested in working with you on a freelance project.\n\nProject details:\n[Please describe your project here]\n\nThank you.`;
+        
+        const gmailUrl =
+          "https://mail.google.com/mail/?view=cm&fs=1" +
+          "&to=" + encodeURIComponent(FREELANCE_EMAIL) +
+          "&su=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body);
+        
+        const newWindow = window.open(gmailUrl, "_blank", "noopener,noreferrer");
+        
+        // Fallback to mailto link if popup is blocked
+        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+            window.location.href = 
+              "mailto:" + 
+              encodeURIComponent(FREELANCE_EMAIL) + 
+              "?subject=" + 
+              encodeURIComponent(subject) + 
+              "&body=" + 
+              encodeURIComponent(body);
+        }
+    });
+});

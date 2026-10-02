@@ -643,3 +643,196 @@ canvas {
 .social-links a:hover {
     color: var(--primary);
 }
+
+/* ========================================= */
+/* RESPONSIVE MEDIA QUERIES */
+/* ========================================= */
+
+/* Large Desktop (1440px - 1920px) */
+@media screen and (max-width: 1920px) {
+    /* Base layout stays intact, max-width handles centering */
+}
+
+/* Small Desktop / Laptop (max-width: 1366px) */
+@media screen and (max-width: 1366px) {
+    .hero-name {
+        font-size: 7rem;
+    }
+    .huge-bg-text {
+        font-size: 26vw;
+    }
+}
+
+/* Tablet Landscape (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .content {
+        padding: 0 4%;
+    }
+    
+    .hero-name {
+        font-size: 6rem;
+    }
+    
+    .hero-role {
+        font-size: 1.3rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .details-section {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .contact-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+/* Tablet Portrait & Large Mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 25px 0;
+    }
+    
+    .header-right {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .hero-section {
+        min-height: auto;
+        margin-top: 40px;
+        margin-bottom: 10vh;
+    }
+
+    .hero-content-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 50px;
+    }
+    
+    .hero-right {
+        align-items: flex-start;
+        gap: 30px;
+    }
+    
+    .hero-name {
+        font-size: 5rem;
+    }
+    
+    .huge-bg-text {
+        font-size: 30vw;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-container {
+        flex-direction: column;
+    }
+    
+    .quote-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    
+    .contact-mid {
+        align-items: center;
+    }
+    
+    .laptop-placeholder {
+        margin: 20px auto 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .bottom-footer {
+        padding: 20px;
+    }
+}
+
+/* Mobile Portrait (max-width: 480px, 390px, 375px, 360px, 320px) */
+@media screen and (max-width: 480px) {
+    .content {
+        padding: 0 5%;
+    }
+    
+    .top-header {
+        font-size: 0.75rem;
+    }
+    
+    .header-right {
+        font-size: 0.75rem;
+    }
+    
+    .hero-name {
+        font-size: 3.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .huge-bg-text {
+        font-size: 35vw;
+    }
+    
+    .cursive-greeting {
+        font-size: 1.8rem;
+    }
+    
+    .hero-role {
+        font-size: 1.1rem;
+    }
+    
+    .stat-num {
+        font-size: 3rem;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .projects-section {
+        padding: 25px 20px;
+    }
+    
+    .details-section {
+        padding: 25px 20px;
+    }
+    
+    .contact-left h2 {
+        font-size: 2.2rem;
+    }
+    
+    /* Ensure buttons are fully accessible on mobile (touch targets) */
+    .available-btn {
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        padding: 15px 20px; /* Touch friendly padding */
+    }
+    
+    .contact-mid .c-item {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
